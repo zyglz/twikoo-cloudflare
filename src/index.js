@@ -1,6 +1,6 @@
 /*!
  * Twikoo Cloudflare worker
- * (c) 2024-present Tao Xin & Mingy & iMaeGoo
+ * (c) 2024-present Mingy & Tao Xin & iMaeGoo
  * Released under the MIT License.
  */
 
@@ -112,7 +112,7 @@ const sha256 = getSha256()
 const xml2js = getXml2js()
 
 const { RES_CODE, MAX_REQUEST_TIMES } = constants
-const VERSION = '1.6.44'
+const VERSION = '1.6.40'
 
 // 全局变量 / variables
 let config
@@ -401,9 +401,6 @@ export default {
         case 'GET_RECENT_COMMENTS': // >= 0.2.7
           res = await getRecentComments(event)
           break
-		case 'COMMENT_GET_RECENT': // 新增，处理 MapleBlog 发送的事件名
-        	res = await getRecentComments(event)
-    		break
         case 'EMAIL_TEST': // >= 1.4.6
           res = await emailTest(event, config, isAdmin())
         break
