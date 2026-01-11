@@ -401,6 +401,9 @@ export default {
         case 'GET_RECENT_COMMENTS': // >= 0.2.7
           res = await getRecentComments(event)
           break
+		case 'COMMENT_GET_RECENT': // 新增，处理 MapleBlog 发送的事件名
+        	res = await getRecentComments(event)
+    		break
         case 'EMAIL_TEST': // >= 1.4.6
           res = await emailTest(event, config, isAdmin())
         break
